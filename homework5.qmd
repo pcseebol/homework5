@@ -92,6 +92,14 @@ table(combined_df$Medu_f, combined_df$Fedu_f, combined_df$Fjob_f, useNA = "alway
 
 We see that with so many factor levels, it can be tricky to interpret the whole table at once. It might be more valuable to investigate smaller subsets of this at a time, such as the connection between jobs and education for each parent, and cross parents for both jobs and education levels. From these tables, it is interesting to note that we have no parents with No Education, and that we have a sizable number of intersections of both higher education mothers and fathers.
 
+For specific observations:
+
+In the one-way table, we see there are 36 students whose mothers have higher education.
+
+In the two-way table, we see there are no students for whom both their mother and father had No Education.
+
+In the three-way table, we see that among students who have a father in teaching, 8 students have both parents with higher education.
+
 ## Categorical Variables Step 2:
 
 Next we will make a conditional two-way table with table. We'll do this twice, by subsetting the data and by using a three-way table and then subsetting it:
@@ -274,7 +282,7 @@ g + geom_point(position = 'jitter') + labs(title = "Scatterplot of Math G3 by ab
 
 Two interesting observations here! From scatterplot one, it looks like the MS school has older students, which may account for why their math scores are higher.
 
-Second, the impact of absences on the data is unclear. There are several data points that have a G3 math score of zero, and after consulting the online source, there are no missing data points for this Final Grade. This means that some students got a 0 final grade, with 0 absences, which seems strange!
+Second, the impact of absences on the data is unclear. The data shows that at least one student appears to have achieved a G3 math score of zero, and after consulting the online source, there are no missing data points for this Final Grade. This means that some students got a 0 final grade, with 0 absences, which seems strange!
 
 ## Numeric Variable Step 7
 
@@ -306,4 +314,4 @@ g = ggplot(combined_df, aes(y = G3.y, x = absences, color = school))
 g + geom_point(position = 'jitter') + labs(title = "Math Grade by Absences & School by Parent Edus", x = "Number of Absences", y = "Average Final Math Grade") + facet_wrap(~Medu_f*Fedu_f)
 ```
 
-Again, very hard to see trends from this alone. It is interesting to see that the largest number of students with parents who both have higher education. Overall, these will be handy graphs to have if we were interesting in identifying interesting trends in this data set in the future!
+Again, very hard to see trends from this alone. It is interesting to see that the largest group of students is in parents who both have higher education. Overall, these will be handy graphs to have if we were interesting in identifying interesting trends in this data set in the future!
